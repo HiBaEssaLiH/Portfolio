@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- FONT-AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div>
+        <!--HEADER-->
+        <header class="hdr">
+            <nav class="navbar">
+                <h1 class="logo"><span class="hhh">H </span>I <span class="hhh">B </span>A </h1>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- HOME SECTION -->
+        <section class="home" id="home">
+            <div class="home-2">
+                <div class="desc">
+                    <h3>Hi, this is me</h3>
+                    <br>
+                    <h1>HIBA ESSALIH</h1>
+                    <br>
+                    <h3>And I'm a <span class="hhh"> Digital Development Student </span></h3>
+                    <p class="PARA">I am a passionate digital development student currently
+                        completing my degree in Computer Science.
+                    </p>
+                    <br>
+                    <div class="social-media">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <a href="#" class="btn">Download CV</a>
+                </div>
+                <div class="image-container">
+                    <img src="téléchargement.jpg" class="image" alt="Profile Picture">
+                </div>
+            </div>
+        </section>
+        <!-- ABOUT SECTION  -->
+        <section class="about" id="about">
+            <div class="about-img">
+                <img src="./téléchargement.jpg" alt="">
+            </div>
+            <div class="about-content">
+                <h2 class="heading"> ABOUT <span> ME</span></h2>
+                <h3> Digital Development Student </h3>
+                <p> My journey in technology began with a curiosity for how things work,
+                    which quickly evolved into a love for creating intuitive and robust web
+                    applications. I thrive on solving complex problems and am always eager to
+                    learn and adapt to new technologies. My goal is to become a proficient
+                    full-stack developer, contributing to innovative projects that make a difference.
+                    Outside of coding, I enjoy playing the guitar, composing music, and participating
+                    in local running events. Let's build something amazing together!
+                </p>
+            </div>
+        </section>
+        <!-- Projects section -->
+
+
+        <section class="projects" id="projects">
+            <h1 class="title2"> My Projects</h1>
+            <P class="para2">take a look at what
+                I have created and be
+                inspired by</P>
+            <div class="container">
+                <div class="Portfolio-box">
+                    <a href="https://github.com/HiBaEssaLiH"><img class="img" src="./hotel.projet.png" alt=""></a>
+                </div>
+
+                <div class="Portfolio-box">
+                    <img class="img" src="./Capture d’écran 2024-05-20 095836.png" alt="">
+                </div>
+
+                <div class="Portfolio-box">
+                    <a href="https://github.com/Niamat1949/Cards-manupulation-.git"><img class="img" src="./tpbinome.png" alt=""></a>
+                </div>
+            </div>
+            <a href="https://github.com/HiBaEssaLiH" class="fff">SEE MORE</a>
+        </section>
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+            <div>
+                <h1 class="heading"> Contact <span> Me</span></h1>
+            </div>
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" placeholder="Full name" id="nom">
+                    <input type="text" placeholder="Email address" id="email">
+                </div><br>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Mobile Number" id="num">
+                    <input type="text" placeholder="Email Subject" id="subj">
+                </div><br>
+                <input type="text" name="text" id="msg" placeholder="Your Message">
+                <!-- <textarea name="text" placeholder="Your Message" id="msg" aria-valuetext="hhh"></textarea> -->
+                <input type="submit" value="Send" class="sss" onclick="verify(event)">
+            </form>
+        </section>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-text">
+                <p> Copyright &copy; 2024 by @hibaesaalih | All Rights Reserwed</p>
+            </div>
+
+            <div class="footeer-icontop">
+                <a href="#home"><i class="fa-solid fa-angle-up"></i> </a>
+            </div>
+        </footer>
+    </div>
+    <script>
+
+        let header = document.querySelector('.hdr');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(4,36,64,0.8)'
+            } else {
+                header.style.backgroundColor = 'rgba(4,36,64,1)'
+            }
+        });
+
+
+        let nom = document.getElementById("nom")
+        let email = document.getElementById("email")
+        let subj = document.getElementById("subj")
+        let num = document.getElementById("num")
+        let msg = document.getElementById("msg")
+
+        function verify(e) {
+            e.preventDefault()
+
+            if (nom.value.trim() === "") {
+            nom.setAttribute('value', '(Enter Your name please...)');
+            nom.setAttribute('style', 'color:red;');
+            nom.style.border = "2px solid red";
+            setTimeout(() => {
+                nom.removeAttribute('value');
+            }, 2000);
+            } else {
+                nom.setAttribute('style', 'color:white;');
+                nom.style.border = "2px solid green";
+            }
+
+            if (email.value.trim() === "") {
+            email.setAttribute('value', '(Enter Your email please...)');
+            email.setAttribute('style', 'color:red;');
+            email.style.border = "2px solid red";
+            setTimeout(() => {
+                email.removeAttribute('value');
+            }, 2000);
+            } else {
+                email.setAttribute('style', 'color:white;');
+                email.style.border = "2px solid green";
+            }
+
+            if (subj.value.trim() === "") {
+            subj.setAttribute('value', '(Enter Your email subject please...)');
+            subj.setAttribute('style', 'color:red;');
+            subj.style.border = "2px solid red";
+            setTimeout(() => {
+                subj.removeAttribute('value');
+            }, 2000);
+            } else {
+                subj.setAttribute('style', 'color:white;')
+                subj.style.border = "2px solid green";
+            }
+
+            if (num.value.trim() === "") {
+            num.setAttribute('value', '(Enter Your telephone number please...)');
+            num.setAttribute('style', 'color:red;');
+            num.style.border = "2px solid red";
+            setTimeout(() => {
+                num.removeAttribute('value');
+            }, 2000);
+            } else {
+                num.setAttribute('style', 'color:white;')
+                num.style.border = "2px solid green";
+            }
+
+            if (msg.value.trim() === "") {
+            msg.setAttribute('value', '(Enter Your message please...)');
+            msg.setAttribute('style', 'color:red;');
+            msg.style.border = "2px solid red";
+            setTimeout(() => {
+                msg.removeAttribute('value');
+            }, 2000);
+            } else {
+                msg.setAttribute('style', 'color:white;')
+                msg.style.border = "2px solid green";
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
